@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+input,
+textarea {
+    padding: 5px;
+}
+body {
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.application {
+    background-color: darkgray;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+table {
+    width: 100%; /* Ширина таблицы */
+    border: 4px double black; /* Рамка вокруг таблицы */
+    border-collapse: collapse; /* Отображать только одинарные линии */
+    font-size: 16px;
+}
+
+th {
+    text-align: left; /* Выравнивание по левому краю */
+    background: #ccc; /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black; /* Граница вокруг ячеек */
+}
+td {
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black; /* Граница вокруг ячеек */
+}
+
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+.pagination-btn {
+    padding: 5px;
+}
+
+.sorted:hover {
+    cursor: pointer;
+}
+
+.create-form, .create-auth-form {
+    border: 1px solid black;
+    background-color: antiquewhite; 
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+}
+.row {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-btns {
+    text-align: right;
+}
+
+.textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 75px;
+    max-height: 75px;
+}
+
+
+/* loader */
+
+.loading {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.loading div {
+    transform-origin: 40px 40px;
+    animation: loading 1.2s linear infinite;
+}
+.loading div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #000;
+}
+.loading div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.loading div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.loading div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.loading div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.loading div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.loading div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.loading div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.loading div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.loading div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.loading div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.loading div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.loading div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
