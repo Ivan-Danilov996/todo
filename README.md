@@ -1,0 +1,2 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/ignis4olcwiwnc5m/branch/main?svg=true)](https://ci.appveyor.com/project/Ivan-Danilov996/todo/branch/main)
+https://ivan-danilov996.github.io/todo/
