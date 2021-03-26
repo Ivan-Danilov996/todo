@@ -41,7 +41,7 @@ class Todo {
     const request = new Request();
     this.sort[this.value] ? this.orderSort = 'down' : this.orderSort = 'up';
     this.sort[this.value] = !this.sort[this.value];
-    request.createRequest(`http://localhost/mysite/sort${this.orderSort}?offset=${(this.activeBtn * 3) - 3}&sort=${this.value}`)
+    request.createRequest(`https://app-todo-back.herokuapp.com/sort${this.orderSort}?offset=${(this.activeBtn * 3) - 3}&sort=${this.value}`)
       .then((data) => {
         this.updateData(data)
       });
@@ -63,9 +63,9 @@ class Todo {
 
   clreateCompletedURL(id) {
     if (this.orderSort) {
-      return `http://localhost/mysite/sort${this.orderSort}?offset=${(this.activeBtn * 3) - 3}&sort=${this.value}&id=${id}`
+      return `https://app-todo-back.herokuapp.com/sort${this.orderSort}?offset=${(this.activeBtn * 3) - 3}&sort=${this.value}&id=${id}`
     }
-    return `http://localhost/mysite/offset?offset=${(this.activeBtn * 3) - 3}&id=${id}`
+    return `https://app-todo-back.herokuapp.com/offset?offset=${(this.activeBtn * 3) - 3}&id=${id}`
   }
 
   appendForm(form) {
@@ -108,7 +108,7 @@ class Todo {
         this.auth = false
         localStorage.removeItem('auth')
         const request = new Request();
-        request.createRequest(`http://localhost/mysite/${this.createURL()}`)
+        request.createRequest(`https://app-todo-back.herokuapp.com/${this.createURL()}`)
           .then((data) => {
             this.updateData(data)
           });
@@ -118,7 +118,7 @@ class Todo {
         authElement.addEventListener('submit', e => {
           e.preventDefault()
           const request = new Request()
-          request.createRequest('http://localhost/mysite/auth', 'POST', form.createAuthData())
+          request.createRequest('https://app-todo-back.herokuapp.com/auth', 'POST', form.createAuthData())
             .then((data) => {
               if (data.success === 'ok') {
                 document.querySelector('.create-auth-form').remove()
@@ -145,7 +145,7 @@ class Todo {
       formElement.addEventListener('submit', e => {
         e.preventDefault()
         const request = new Request()
-        request.createRequest('http://localhost/mysite/tasks', 'POST', form.createFormData())
+        request.createRequest('https://app-todo-back.herokuapp.com/tasks', 'POST', form.createFormData())
           .then((data) => {
             document.querySelector('.create-form').remove()
             this.updateData(data)
@@ -231,7 +231,7 @@ class Todo {
       }
     });
     const request = new Request();
-    request.createRequest(`http://localhost/mysite/${this.createURL()}`)
+    request.createRequest(`https://app-todo-back.herokuapp.com/${this.createURL()}`)
       .then((data) => {
         this.updateData(data)
       });
@@ -264,7 +264,7 @@ class Todo {
   init() {
     localStorage.getItem('auth') ? this.auth = true : false
     const request = new Request();
-    request.createRequest('http://localhost/mysite/tasks')
+    request.createRequest('https://app-todo-back.herokuapp.com/tasks')
       .then((data) => {
         this.updateData(data)
         this.createPagination();
